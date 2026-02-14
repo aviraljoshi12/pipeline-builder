@@ -12,10 +12,13 @@ export const SubmitButton = () => {
     formData.append("pipeline", JSON.stringify(pipeline));
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/pipelines/parse", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://pipeline-builder-akz6.onrender.com/pipelines/parse",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
 
       const data = await res.json();
 
