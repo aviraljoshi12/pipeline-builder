@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Position, useUpdateNodeInternals } from "reactflow";
 import { BaseNode } from "./baseNode";
+import { useMemo } from "react";
 
 export const TextNode = ({ id, data }) => {
   const [currText, setCurrText] = useState(data?.text || "{{input}}");
@@ -16,9 +17,10 @@ export const TextNode = ({ id, data }) => {
   };
 
   const variables = extractVariables(currText);
-  const uniqueVariables = [...new Set(variables)];
 
   const updateNodeInternals = useUpdateNodeInternals();
+
+  const uniqueVariables = useMemo(() => [...new Set(variables)], [variables]);
   const nodeHeight = Math.max(90, 60 + uniqueVariables.length * 24);
 
   useEffect(() => {

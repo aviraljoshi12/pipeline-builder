@@ -92,7 +92,7 @@ export const PipelineUI = () => {
         addNode(newNode);
       }
     },
-    [reactFlowInstance],
+    [reactFlowInstance, addNode, getNodeID],
   );
 
   const onDragOver = useCallback((event) => {
@@ -102,7 +102,7 @@ export const PipelineUI = () => {
 
   return (
     <>
-      <div ref={reactFlowWrapper} style={{ width: "100wv", height: "70vh" }}>
+      <div ref={reactFlowWrapper} style={{ width: "100vw", height: "70vh" }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}

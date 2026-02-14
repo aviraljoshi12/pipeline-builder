@@ -3,7 +3,7 @@ import { Position } from "reactflow";
 import { BaseNode } from "./baseNode";
 
 export const MathNode = ({ id }) => {
-  const [value, setValue] = useState(0);
+  const [value] = useState(0);
 
   return (
     <BaseNode
