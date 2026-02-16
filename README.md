@@ -1,4 +1,4 @@
-# VectorShift Frontend Technical Assessment
+# Visual Pipeline Builder
 
 Author: Aviral Joshi
 
